@@ -1,25 +1,22 @@
 import React from 'react';
-import { Bot, Code, Presentation, ArrowUpRight } from 'lucide-react';
+import { Bot, Code, Presentation } from 'lucide-react';
 
 const Expertise: React.FC = () => {
   const services = [
     {
       icon: <Bot size={32} className="text-gray-800" />,
       title: "AI Workflow Integration",
-      description: "Custom strategies to implement LLMs and generative tools into your daily content creation pipeline.",
-      link: "View Guide"
+      description: "Custom strategies to implement LLMs and generative tools into your daily content creation pipeline."
     },
     {
       icon: <Presentation size={32} className="text-gray-800" />,
       title: "Workshops & Training",
-      description: "Interactive sessions for teams and individuals looking to master prompt engineering and AI ethics.",
-      link: "Book Session"
+      description: "Interactive sessions for teams and individuals looking to master prompt engineering and AI ethics."
     },
     {
       icon: <Code size={32} className="text-gray-800" />,
       title: "AI-Powered Web Dev",
-      description: "Building high-performance websites integrated with AI agents and dynamic content generation.",
-      link: "See Portfolio"
+      description: "Building high-performance websites integrated with AI agents and dynamic content generation."
     }
   ];
 
@@ -43,12 +40,9 @@ const Expertise: React.FC = () => {
                 {service.icon}
               </div>
               <h4 className="text-2xl font-serif mb-4">{service.title}</h4>
-              <p className="text-gray-600 mb-8 leading-relaxed font-light">
+              <p className="text-gray-600 leading-relaxed font-light">
                 {service.description}
               </p>
-              <a href="#newsletter" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider group-hover:gap-4 transition-all">
-                {service.link} <ArrowUpRight size={16} />
-              </a>
             </div>
           ))}
         </div>

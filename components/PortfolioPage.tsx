@@ -1,147 +1,140 @@
-import React, { useEffect } from 'react';
-import { Play } from 'lucide-react';
+import React from 'react';
 
-interface Project {
+interface ProjectProps {
+  index: string;
   title: string;
-  category: string;
-  image: string;
-  link: string;
-  className?: string; // For grid spans
+  role: string;
+  year: string;
+  description: string;
+  stack: string[];
+  videoId: string;
+  videoDuration: string;
+  orientation?: 'landscape' | 'portrait';
 }
 
+const ProjectSection: React.FC<ProjectProps> = ({ 
+  index, 
+  title, 
+  role, 
+  year, 
+  description, 
+  stack, 
+  videoId, 
+  videoDuration,
+  orientation = 'landscape'
+}) => (
+  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-32 lg:mb-48 border-b border-gray-100 pb-24 last:border-0 last:pb-0">
+    
+    {/* Left Column: Context (Sticky) */}
+    <div className="lg:col-span-4 lg:sticky lg:top-32 self-start flex flex-col">
+       <div className="mb-12">
+          <div className="flex gap-2 items-center mb-4">
+             <span className="w-2 h-2 bg-brand-red rounded-full"></span>
+             <span className="text-[10px] font-bold tracking-widest uppercase text-gray-400">Portfolio {index}</span>
+          </div>
+          <h1 className="font-serif text-6xl md:text-8xl leading-none mb-6 text-brand-black">
+            {title}<span className="text-gray-200">.</span>
+          </h1>
+          <div className="flex flex-col gap-1 text-[10px] font-bold tracking-widest uppercase text-gray-500 font-sans">
+             <span>Role: {role}</span>
+             <span>Year: {year}</span>
+          </div>
+       </div>
+
+       <div className="space-y-10 max-w-sm">
+          <p className="font-serif text-xl leading-relaxed text-gray-800">
+            {description}
+          </p>
+          
+          <div className="border-t border-gray-100 pt-8">
+             <span className="block text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-4">The Stack</span>
+             <ul className="flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm text-gray-600 font-medium">
+                {stack.map((tech, i) => (
+                  <li key={i}>{tech}</li>
+                ))}
+             </ul>
+          </div>
+       </div>
+    </div>
+
+    {/* Right Column: Visuals */}
+    <div className={`lg:col-span-8 flex justify-center ${orientation === 'portrait' ? 'lg:justify-center' : 'lg:justify-start'}`}>
+       <div className={`w-full ${orientation === 'portrait' ? 'max-w-md' : ''}`}>
+          <div className={`${orientation === 'portrait' ? 'aspect-[9/16]' : 'aspect-video'} w-full bg-black relative shadow-lg`}>
+            <iframe 
+              src={`https://fast.wistia.net/embed/iframe/${videoId}?seo=false&videoFoam=true&autoPlay=true&muted=true&endVideoBehavior=loop&playerColor=1a1a1a`}
+              title={`${title} Video`}
+              allow="autoplay; fullscreen" 
+              allowTransparency={true} 
+              frameBorder="0" 
+              scrolling="no" 
+              className="w-full h-full absolute inset-0" 
+              name="wistia_embed"
+            ></iframe>
+          </div>
+          <div className="mt-6 flex justify-between items-baseline border-b border-gray-100 pb-4">
+             <span className="text-xs font-bold tracking-widest uppercase text-black">{index} — Main Film</span>
+             <span className="text-[10px] font-mono text-gray-400">{videoDuration}</span>
+          </div>
+       </div>
+    </div>
+  </div>
+);
+
 const PortfolioPage: React.FC = () => {
-  const projects: Project[] = [
-    {
-      title: "Atmospheric Dreams",
-      category: "AI Commercial",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
-      link: "#",
-      className: "md:col-span-2 aspect-video md:aspect-[2.4/1]"
-    },
-    {
-      title: "Munchies Matcha",
-      category: "Brand Identity",
-      image: "https://lh3.googleusercontent.com/d/1BK05kMeePNX1qCJ-dhVqXwviiZP8KkFI",
-      link: "https://www.instagram.com/p/DT28v6bjMX8/",
-      className: "md:col-span-1 aspect-square md:aspect-[16/9]"
-    },
-    {
-      title: "Tike - Jordan",
-      category: "SaaS Product",
-      image: "https://lh3.googleusercontent.com/d/1MP9QTRgZH5vr9g4bJaTEu827EXzDh5kD",
-      link: "https://www.instagram.com/p/DT03bp0DKcW/",
-      className: "md:col-span-1 aspect-square md:aspect-[16/9]"
-    },
-    {
-      title: "Bloom Robbins",
-      category: "Product Design",
-      image: "https://lh3.googleusercontent.com/d/1aD3eV0UibScAvUNF64bX8NBlJPyw13wt",
-      link: "https://www.instagram.com/p/DT77gJtjDRU/",
-      className: "md:col-span-2 aspect-video md:aspect-[2.4/1]"
-    },
-    {
-      title: "Neon Cyberpunk",
-      category: "AI Art Direction",
-      image: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1974&auto=format&fit=crop",
-      link: "#",
-      className: "md:col-span-1 aspect-square md:aspect-[4/3]"
-    },
-    {
-      title: "Fashion Editorial",
-      category: "AI Photography",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop",
-      link: "#",
-      className: "md:col-span-1 aspect-square md:aspect-[4/3]"
-    },
-    {
-      title: "Future Concepts",
-      category: "Generative Art",
-      image: "https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=1908&auto=format&fit=crop",
-      link: "#",
-      className: "md:col-span-1 aspect-square md:aspect-[16/9]"
-    },
-    {
-      title: "Digital Vogue",
-      category: "Editorial",
-      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop",
-      link: "#",
-      className: "md:col-span-1 aspect-square md:aspect-[16/9]"
-    }
-  ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove('opacity-0', 'translate-y-12');
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '50px',
-      }
-    );
-
-    const cards = document.querySelectorAll('.project-card-animate');
-    cards.forEach((card) => observer.observe(card));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section className="pt-20 min-h-screen bg-white">
-      <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-[2px] bg-white">
-        {projects.map((project, idx) => (
-          <a 
-            key={idx} 
-            href={project.link} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className={`
-              project-card-animate 
-              relative group overflow-hidden cursor-pointer bg-gray-100 
-              opacity-0 translate-y-12
-              transition-all duration-700 ease-out
-              ${project.className || 'md:col-span-1 aspect-video'}
-            `}
-            style={{ transitionDelay: `${idx * 100}ms` }}
-          >
-            {/* Image Layer - Scales up on hover */}
-            <img 
-              src={project.image} 
-              alt={project.title} 
-              className="w-full h-full object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-110" 
-            />
-            
-            {/* Overlay Layer - Darkens on hover */}
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500 ease-out" />
-            
-            {/* Center Play Button - Fade & Scale In */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-50 group-hover:scale-100">
-               <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm border border-white/50 flex items-center justify-center">
-                  <Play className="text-white fill-white ml-1" size={24} />
-               </div>
-            </div>
+    <section className="min-h-screen bg-white pt-32 pb-24 animate-in fade-in duration-700">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
+        
+        <ProjectSection 
+          index="01"
+          title="Tike"
+          role="AI Director"
+          year="2026"
+          description="Evoking 'timeless cool' through a hybrid AI workflow. We blended high-fidelity product shots with atmospheric European city vibes to maintain the Tike legacy."
+          stack={['Midjourney v6', 'Runway Gen-2', 'Topaz Video AI']}
+          videoId="qxevwxu345"
+          videoDuration="00:24"
+          orientation="landscape"
+        />
 
-            {/* Content Layer - Slides up from bottom */}
-            <div className="absolute bottom-0 left-0 w-full p-8 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out delay-75">
-              <h3 className="text-white font-serif text-4xl md:text-5xl italic leading-none mb-2 drop-shadow-lg">
-                {project.title}
-              </h3>
-              <p className="text-white/80 text-[10px] md:text-xs font-bold uppercase tracking-[0.25em]">
-                {project.category}
-              </p>
-            </div>
-            
-          </a>
-        ))}
+        <ProjectSection 
+          index="02"
+          title="Munchies"
+          role="Creative Director"
+          year="2026"
+          description="A sensory exploration of ritual and calm. Visualizing the texture and tranquility of the perfect matcha pour using generative fluid dynamics and hyper-real styling."
+          stack={['Midjourney v6', 'Luma Dream Machine', 'After Effects']}
+          videoId="nbf170kr0p"
+          videoDuration="00:15"
+          orientation="landscape"
+        />
+
+        <ProjectSection 
+          index="03"
+          title="Bloom Robbins"
+          role="AI Visual Lead"
+          year="2026"
+          description="Transforming hair care into visual poetry. We utilized generative video to simulate impossible hair textures and volume, creating a campaign that feels both magical and tangible."
+          stack={['Midjourney v6', 'Runway Gen-3', 'Magnific AI']}
+          videoId="t0kqblofz7"
+          videoDuration="00:18"
+          orientation="portrait"
+        />
+
+        <ProjectSection 
+          index="04"
+          title="Actinia"
+          role="AI Commercial Lead"
+          year="2026"
+          description="Redefining automotive luxury through generative motion. We created a surreal, high-speed environment where light and geometry interact with the vehicle's form, pushing the boundaries of automotive advertising."
+          stack={['Midjourney v6', 'Runway Gen-3 Alpha', 'DaVinci Resolve']}
+          videoId="5wv6ia13g2"
+          videoDuration="00:22"
+          orientation="landscape"
+        />
+
       </div>
-      
-      <div className="py-2 bg-white"></div>
     </section>
   );
 };
