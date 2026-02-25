@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
-import Projects from './components/Projects';
 import Footer from './components/Footer';
-import AiChat from './components/AiChat';
+import PortfolioPage from './components/PortfolioPage';
 
 const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState('home');
+
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+      <Navbar onNavigate={setCurrentPage} currentPage={currentPage} />
       <main>
-        <Hero />
-        <Skills />
-        <Projects />
+        {currentPage === 'home' && (
+          <>
+            <Hero />
+            <Skills />
+          </>
+        )}
+        {currentPage === 'portfolio' && (
+          <PortfolioPage />
+        )}
       </main>
       <Footer />
-      <AiChat />
     </div>
   );
 };

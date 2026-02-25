@@ -10,7 +10,7 @@ interface Message {
 const AiChat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'model', text: "Hi! I'm Klementina's AI assistant. Ask me anything about her work, courses, or AI tools." }
+    { role: 'model', text: "Hi! I'm Klementina's AI assistant. Ask me anything about my work, services, or AI tools." }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -38,20 +38,45 @@ const AiChat: React.FC = () => {
     try {
       // Check for API Key
       if (!process.env.API_KEY) {
+        // Simulate network delay for better UX before showing error
         setTimeout(() => {
-            setMessages(prev => [...prev, { role: 'model', text: "I'm currently offline (API Key missing). Please check the site configuration." }]);
+            setMessages(prev => [...prev, { role: 'model', text: "I'm currently offline because the API Key is missing in the Vercel configuration. Please add 'API_KEY' to your Environment Variables." }]);
             setIsLoading(false);
-        }, 500);
+        }, 1000);
         return;
       }
 
       // Initialize Chat if not exists
       if (!chatRef.current) {
         const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        
+        // Detailed context about Klementina based on the portfolio content
+        const systemContext = `
+          You are the AI assistant for Klementina Kortnik's personal portfolio website. 
+          
+          Here is Klementina's profile to answer questions correctly:
+          - **Role**: AI Content Creator, Educator, and Lead AI Architect.
+          - **Location**: Based in Slovenia, working globally.
+          - **Contact**: hello@klementinakortnik.com.
+          - **Services**: AI Commercials, Social/Visual Content Creation, AI Education (workshops/mentoring), and AI-powered Web Experiences.
+          - **Key Skills**: ChatGPT, Higgsfield, Midjourney, Google AI Studio.
+          - **Experience**: 
+            - Head of Education at Future Skills Academy (2022-Present).
+            - Founder of Klementina AI Studios.
+            - Prompt Engineer at Midjourney Inc (2018-2021).
+            - AI Engineer Internship at OpenAI (2018-2021).
+            - Bachelor's in CS from Stanford (2014-2018).
+          - **Projects**: Munchies Matcha (UI/UX+AI), Tike Jordan (SaaS), Bloom Robbins (Product Design).
+          
+          **Tone**: Professional, creative, intelligent, and concise. 
+          **Goal**: Encourage visitors to work with Klementina or subscribe to her newsletter.
+          If asked about pricing, ask them to email hello@klementinakortnik.com for a quote.
+        `;
+
         chatRef.current = ai.chats.create({
           model: 'gemini-3-flash-preview',
           config: {
-            systemInstruction: "You are the AI assistant for Klementina Kortnik's portfolio website. She is an AI content creator and educator. Answer questions about her biography, services (AI Commercials, Content Creation, Education), and skills (ChatGPT, Midjourney, etc). Be professional, concise, and helpful. Tone: Creative, intelligent, friendly.",
+            systemInstruction: systemContext,
           },
         });
       }
