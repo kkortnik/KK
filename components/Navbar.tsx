@@ -56,6 +56,14 @@ const Navbar: React.FC = () => {
             >
               Instagram
             </a>
+            <a 
+              href="https://www.linkedin.com/in/klementina-kortnik-312aa43aa" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 text-sm font-medium text-gray-500 hover:text-black transition-colors rounded-full hover:bg-gray-100/50"
+            >
+              LinkedIn
+            </a>
           </div>
 
           <div className="flex items-center gap-3">
@@ -81,6 +89,7 @@ const Navbar: React.FC = () => {
             <button onClick={() => scrollToSection('work')} className="text-base font-medium text-gray-800 py-2">Work</button>
             <button onClick={() => scrollToSection('expertise')} className="text-base font-medium text-gray-800 py-2">Services</button>
             <a href="https://www.instagram.com/212studio___/" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-gray-800 py-2">Instagram</a>
+            <a href="https://www.linkedin.com/in/klementina-kortnik-312aa43aa" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-gray-800 py-2">LinkedIn</a>
           </div>
         )}
       </nav>
