@@ -1,5 +1,6 @@
 import React from 'react';
-import { Bot, Code, Presentation } from 'lucide-react';
+import { Bot, Code } from 'lucide-react';
+import Ampersand from './Ampersand';
 
 const Expertise: React.FC = () => {
   const services = [
@@ -9,8 +10,8 @@ const Expertise: React.FC = () => {
       description: "Custom strategies to implement LLMs and generative tools into your daily content creation pipeline."
     },
     {
-      icon: <Presentation size={32} className="text-gray-800" />,
-      title: "Workshops & Training",
+      icon: <Ampersand size="text-5xl" className="text-gray-800" />,
+      title: <span>Workshops <Ampersand /> Training</span>,
       description: "Interactive sessions for teams and individuals looking to master prompt engineering and AI ethics."
     },
     {

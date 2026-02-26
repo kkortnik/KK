@@ -1,10 +1,11 @@
 import React from 'react';
+import Ampersand from './Ampersand';
 
 const Testimonial: React.FC = () => {
   return (
     <section className="py-32 max-w-4xl mx-auto px-6 text-center">
        <blockquote className="font-serif text-3xl md:text-4xl leading-relaxed text-black mb-12">
-         “Klementina was a real pleasure to work with and we look forward to working with her again. She's definitely the kind of creator you can trust with a project from start to finish. Great services & Recommended!”
+         “Klementina was a real pleasure to work with and we look forward to working with her again. She's definitely the kind of creator you can trust with a project from start to finish. Great services <Ampersand /> Recommended!”
        </blockquote>
        
        <div className="mb-6">

@@ -1,4 +1,5 @@
 import React from 'react';
+import Ampersand from './Ampersand';
 
 const Experience: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const Experience: React.FC = () => {
       </div>
 
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
-        <h2 className="text-center font-serif text-4xl mb-20">Education & Experience</h2>
+        <h2 className="text-center font-serif text-4xl mb-20">Education <Ampersand /> Experience</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24">
           

@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Skills from './components/Skills';
 import Expertise from './components/Expertise';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
@@ -13,7 +12,6 @@ const App: React.FC = () => {
       <Navbar />
       <main>
         <Hero />
-        <Skills />
         <PortfolioPage />
         <Expertise />
         <Newsletter />

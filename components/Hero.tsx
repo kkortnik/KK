@@ -1,4 +1,5 @@
 import React from 'react';
+import Ampersand from './Ampersand';
 
 const Hero: React.FC = () => {
   return (
@@ -40,19 +41,10 @@ const Hero: React.FC = () => {
             <h6 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Services</h6>
             <ul className="font-serif text-lg text-black space-y-2">
               <li><strong className="font-medium">AI Commercials</strong> – AI-generated visuals and campaigns for brands</li>
-              <li><strong className="font-medium">AI Content Creation</strong> – social, visual & branded AI content</li>
-              <li><strong className="font-medium">AI Education</strong> – workshops, mentoring & AI training</li>
-              <li><strong className="font-medium">Web & AI-powered Experiences</strong> – websites enhanced with AI</li>
+              <li><strong className="font-medium">AI Content Creation</strong> – social, visual <Ampersand /> branded AI content</li>
+              <li><strong className="font-medium">AI Education</strong> – workshops, mentoring <Ampersand /> AI training</li>
+              <li><strong className="font-medium">Web <Ampersand /> AI-powered Experiences</strong> – websites enhanced with AI</li>
             </ul>
-          </div>
-
-          <div>
-            <h6 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Contact</h6>
-            <p className="font-serif text-lg text-black">
-              <a href="mailto:hello@klementinakortnik.com" className="hover:opacity-70 transition-opacity decoration-1 underline-offset-4 hover:underline">
-                hello@klementinakortnik.com
-              </a>
-            </p>
           </div>
 
         </div>
