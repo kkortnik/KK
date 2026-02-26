@@ -48,12 +48,6 @@ const Navbar: React.FC = () => {
             >
               Services
             </button>
-            <button 
-              onClick={() => scrollToSection('experience')} 
-              className="px-5 py-2 text-sm font-medium text-gray-500 hover:text-black transition-colors rounded-full hover:bg-gray-100/50"
-            >
-              About
-            </button>
           </div>
 
           <div className="flex items-center gap-3">
@@ -78,7 +72,6 @@ const Navbar: React.FC = () => {
             <button onClick={() => scrollToSection('home')} className="text-base font-medium text-gray-800 py-2">Home</button>
             <button onClick={() => scrollToSection('work')} className="text-base font-medium text-gray-800 py-2">Work</button>
             <button onClick={() => scrollToSection('expertise')} className="text-base font-medium text-gray-800 py-2">Services</button>
-            <button onClick={() => scrollToSection('experience')} className="text-base font-medium text-gray-800 py-2">About</button>
           </div>
         )}
       </nav>
