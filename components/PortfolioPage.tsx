@@ -45,15 +45,6 @@ const ProjectSection: React.FC<ProjectProps> = ({
           <p className="font-serif text-xl leading-relaxed text-gray-800">
             {description}
           </p>
-          
-          <div className="border-t border-gray-100 pt-8">
-             <span className="block text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-4">The Stack</span>
-             <ul className="flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm text-gray-600 font-medium">
-                {stack.map((tech, i) => (
-                  <li key={i}>{tech}</li>
-                ))}
-             </ul>
-          </div>
        </div>
     </div>
 
