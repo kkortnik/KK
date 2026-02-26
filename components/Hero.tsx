@@ -46,6 +46,15 @@ const Hero: React.FC = () => {
             </ul>
           </div>
 
+          <div>
+            <h6 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Contact</h6>
+            <p className="font-serif text-lg text-black">
+              <a href="mailto:hello@klementinakortnik.com" className="hover:opacity-70 transition-opacity decoration-1 underline-offset-4 hover:underline">
+                hello@klementinakortnik.com
+              </a>
+            </p>
+          </div>
+
         </div>
 
         {/* Right Column: Arched Image */}
