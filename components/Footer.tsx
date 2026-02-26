@@ -28,11 +28,9 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-gray-100 py-8 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-xs font-bold uppercase tracking-widest text-gray-500">
-         <p>© 2024 212 Creative Studio. All Rights Reserved.</p>
-         <p>hello@klementinakortnik.com</p>
-         <div className="flex gap-6 mt-4 md:mt-0 text-black">
-           <a href="https://www.instagram.com/212studio.official/" target="_blank" rel="noopener noreferrer"><Instagram size={16}/></a>
+      <div className="border-t border-gray-100 py-8 px-6 md:px-12 flex justify-center items-center">
+         <div className="text-black">
+           <a href="https://www.instagram.com/212studio___/" target="_blank" rel="noopener noreferrer"><Instagram size={16}/></a>
          </div>
       </div>
 

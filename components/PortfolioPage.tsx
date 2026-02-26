@@ -74,7 +74,7 @@ const ProjectSection: React.FC<ProjectProps> = ({
           </div>
           <div className="mt-6 flex justify-between items-baseline border-b border-gray-100 pb-4">
              <span className="text-xs font-bold tracking-widest uppercase text-black">{index} — Main Film</span>
-             <span className="text-[10px] font-mono text-gray-400">{videoDuration}</span>
+             <span className="text-xs font-mono text-gray-400">{videoDuration}</span>
           </div>
        </div>
     </div>
@@ -83,7 +83,14 @@ const ProjectSection: React.FC<ProjectProps> = ({
 
 const PortfolioPage: React.FC = () => {
   return (
-    <section className="min-h-screen bg-white pt-32 pb-24 animate-in fade-in duration-700">
+    <section id="work" className="bg-white pt-24 pb-24 border-t border-gray-100">
+      
+      {/* Section Header */}
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 mb-32 text-center">
+         <h2 className="font-serif text-5xl md:text-6xl text-brand-black mb-4">Selected Work</h2>
+         <p className="text-xs font-bold uppercase tracking-widest text-gray-400">Featured commercial projects</p>
+      </div>
+
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         
         <ProjectSection 

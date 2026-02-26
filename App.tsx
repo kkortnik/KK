@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
@@ -9,23 +9,15 @@ import Footer from './components/Footer';
 import PortfolioPage from './components/PortfolioPage';
 
 const App: React.FC = () => {
-  const [currentView, setCurrentView] = useState<'home' | 'portfolio'>('home');
-
   return (
     <div className="min-h-screen bg-white">
-      <Navbar onNavigate={setCurrentView} currentView={currentView} />
+      <Navbar />
       <main>
-        {currentView === 'home' ? (
-          <>
-            <Hero />
-            <Skills />
-            {/* Projects section removed from landing page as requested */}
-            <Expertise />
-            <Newsletter />
-          </>
-        ) : (
-          <PortfolioPage />
-        )}
+        <Hero />
+        <Skills />
+        <PortfolioPage />
+        <Expertise />
+        <Newsletter />
       </main>
       <Footer />
       <AiChat />

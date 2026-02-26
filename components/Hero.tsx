@@ -33,9 +33,6 @@ const Hero: React.FC = () => {
                <p>
                  From concept to execution, I help turn ideas into scalable, smart visuals - powered by AI and guided by strategy.
                </p>
-               <p className="text-sm font-sans mt-2 text-gray-500 not-italic">
-                 📍 Based in Slovenia · Working globally
-               </p>
             </div>
           </div>
 
@@ -49,20 +46,6 @@ const Hero: React.FC = () => {
             </ul>
           </div>
 
-          <div>
-            <h6 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Contact</h6>
-            <p className="font-serif text-lg text-black">
-              hello@klementinakortnik.com
-            </p>
-          </div>
-
-          {/* Partner Logos (Small) */}
-          <div className="pt-8 flex flex-wrap gap-6 grayscale opacity-60 justify-center lg:justify-start">
-             {/* Simple placeholders for client logos */}
-             <div className="h-6 w-16 bg-black/20"></div>
-             <div className="h-6 w-16 bg-black/20"></div>
-             <div className="h-6 w-16 bg-black/20"></div>
-          </div>
         </div>
 
         {/* Right Column: Arched Image */}
