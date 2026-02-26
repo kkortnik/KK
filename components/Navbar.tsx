@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] md:w-auto max-w-[600px] transition-all duration-300">
+      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] md:w-auto max-w-[700px] transition-all duration-300">
         <div className="bg-white/90 backdrop-blur-xl pl-6 pr-2 py-2 rounded-full shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-gray-100 flex items-center justify-between md:gap-8">
           
           {/* Brand */}
@@ -48,6 +48,14 @@ const Navbar: React.FC = () => {
             >
               Services
             </button>
+            <a 
+              href="https://www.instagram.com/212studio___/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 text-sm font-medium text-gray-500 hover:text-black transition-colors rounded-full hover:bg-gray-100/50"
+            >
+              Instagram
+            </a>
           </div>
 
           <div className="flex items-center gap-3">
@@ -72,6 +80,7 @@ const Navbar: React.FC = () => {
             <button onClick={() => scrollToSection('home')} className="text-base font-medium text-gray-800 py-2">Home</button>
             <button onClick={() => scrollToSection('work')} className="text-base font-medium text-gray-800 py-2">Work</button>
             <button onClick={() => scrollToSection('expertise')} className="text-base font-medium text-gray-800 py-2">Services</button>
+            <a href="https://www.instagram.com/212studio___/" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-gray-800 py-2">Instagram</a>
           </div>
         )}
       </nav>
