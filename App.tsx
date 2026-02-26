@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Expertise from './components/Expertise';
 import Newsletter from './components/Newsletter';
-import AiChat from './components/AiChat';
 import Footer from './components/Footer';
 import PortfolioPage from './components/PortfolioPage';
 
@@ -20,7 +19,6 @@ const App: React.FC = () => {
         <Newsletter />
       </main>
       <Footer />
-      <AiChat />
     </div>
   );
 };
