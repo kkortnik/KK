@@ -8,8 +8,7 @@ const Hero: React.FC = () => {
       {/* Title Section */}
       <div className="text-center mb-16 md:mb-24">
         <h1 className="font-serif text-5xl md:text-7xl text-black leading-tight">
-          Klementina Kortnik<br/>
-          <span className="font-normal italic text-brand-text">AI Creations</span>
+          Klementina Kortnik
         </h1>
       </div>
 
@@ -23,16 +22,13 @@ const Hero: React.FC = () => {
             <h6 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Biography</h6>
             <div className="font-serif text-lg leading-relaxed text-black space-y-4">
                <p>
-                 I help brands and creators bring ideas to life with AI.
+                 Hi, I'm Klementina.
                </p>
                <p>
-                 I’m Klementina, an AI content creator and educator specializing in AI-powered content, education, and commercial visuals.
+                 I'm passionate about helping people and businesses unlock the potential of artificial intelligence. Whether it's streamlining workflows, creating engaging content, or implementing smart automation, I focus on turning complex technology into practical solutions that deliver real results.
                </p>
                <p>
-                 I create AI-driven content, teach others how to use AI creatively and efficiently, and produce AI commercials that blend storytelling, aesthetics, and technology.
-               </p>
-               <p>
-                 From concept to execution, I help turn ideas into scalable, smart visuals - powered by AI and guided by strategy.
+                 My mission is simple: help you work smarter, save time, and create more value.
                </p>
             </div>
           </div>
