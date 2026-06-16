@@ -28,10 +28,11 @@ const Hero: React.FC = () => {
                Hi, I'm Klementina.
              </p>
              <p>
-               I help people make sense of fast-moving technology and put it to practical use. My work sits at the intersection of AI, community, and content. Currently building and supporting an online AI education community, and creating video content that connects with real audiences.
+               I run the community for AI Universe. An early-stage AI education platform that's growing fast. 
+               I believe technology should simplify life, not make it more complicated. That's why I help individuals and businesses understand and use artificial intelligence in practical and meaningful ways. From everyday tasks to digital projects, content creation, and automation.
              </p>
              <p>
-               What I enjoy most is turning something that feels complicated into something simple and useful, always with a personal touch.
+               My goal is simple: less time wasted, more impact created.
              </p>
           </div>
           
