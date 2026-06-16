@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
           <div className="flex-1 flex justify-center md:justify-end items-center">
              <a href="mailto:hello@klementinakortnik.com" className="group flex items-end gap-2">
                 <span className="font-serif text-5xl md:text-7xl italic text-black group-hover:opacity-70 transition-opacity leading-tight">
-                  Work<br/>with me
+                  Let's Work<br/>Together
                 </span>
                 <ArrowUpLeft size={32} className="mb-2 group-hover:-translate-y-2 group-hover:-translate-x-2 transition-transform duration-300" />
              </a>

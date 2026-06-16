@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
           </h1>
           
           <h2 className="text-[11px] md:text-sm font-bold uppercase tracking-[0.2em] text-[#7A8B6A] font-sans mt-2">
-            AI Specialist <Ampersand size="text-inherit" /> Digital Creator
+            Turning AI into practical solutions that save time and create impact.
           </h2>
           
           <div className="font-serif text-lg md:text-xl text-gray-800 leading-relaxed max-w-lg mx-auto lg:mx-0 mt-4 space-y-4">
@@ -28,19 +28,19 @@ const Hero: React.FC = () => {
                Hi, I'm Klementina.
              </p>
              <p>
-               I'm passionate about helping people and businesses unlock the potential of artificial intelligence. Whether it's streamlining workflows, creating engaging content, or implementing smart automation, I focus on turning complex technology into practical solutions that deliver real results.
+               I help people make sense of fast-moving technology and put it to practical use. My work sits at the intersection of AI, community, and content. Currently building and supporting an online AI education community, and creating video content that connects with real audiences.
              </p>
              <p>
-               My mission is simple: help you work smarter, save time, and create more value.
+               What I enjoy most is turning something that feels complicated into something simple and useful, always with a personal touch.
              </p>
           </div>
           
           <div className="flex flex-col sm:flex-row items-center gap-8 mt-8 justify-center lg:justify-start">
             <button 
               onClick={() => scroll('contact')} 
-              className="bg-[#7A8B6A] text-white px-8 py-4 rounded-sm font-bold text-xs tracking-[0.15em] hover:bg-[#687858] transition-colors whitespace-nowrap"
+              className="bg-[#7A8B6A] text-white px-8 py-4 rounded-sm font-bold text-xs tracking-[0.15em] hover:bg-[#687858] transition-colors whitespace-nowrap uppercase"
             >
-              WORK WITH ME
+              Let's Work Together
             </button>
             <button 
               onClick={() => scroll('expertise')} 
